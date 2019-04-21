@@ -10,8 +10,13 @@ from bs4 import BeautifulSoup
 
 r=requests.get('https://cn.bing.com')
 html=r.text
+<<<<<<< HEAD
 matchObj = re.findall('url:\S+?jpg',html)	#这里是一个正则表达式，用来获取图片的url地址
 matchObj = "".join(matchObj[0])	#这一步把findall所返回的list类型变为str
+=======
+matchObj = re.findall('src\S+jpg',html)
+matchObj = "".join(matchObj)
+>>>>>>> 26342a1708dfc2ce4db78851bc924815f8d01555
 # for i in matchObj:
 defaultURL="https://cn.bing.com/"
 changedURL=matchObj[5:]
@@ -52,7 +57,10 @@ def sendImg():
 	msg = MIMEMultipart()
 	msg['Subject'] = mail_tilte
 	msg['From'] = gmail_user
+<<<<<<< HEAD
 	# msg['To'] = '415574154@qq.com'
+=======
+>>>>>>> 26342a1708dfc2ce4db78851bc924815f8d01555
 	msg['To'] = '826697909@qq.com'
 	content = MIMEText("This is today's Bing wallpaper.", _charset='gbk')   # add email content  ,coding is gbk, becasue chinese exist
 	msg.attach(content)
